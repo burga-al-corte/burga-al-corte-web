@@ -1,0 +1,43 @@
+🍔 GUÍA PARA AGREGAR FOTOS - BURGA AL CORTE
+==================================================
+
+📁 HAMBURGUESAS (carpeta: /fotos/hamburguesas/)
+----------------------------------------------
+smash.jpg          - Hamburguesa Smash ($9,000)
+cripton.jpg        - Hamburguesa Cripton ($9,000)  
+wave.jpg           - Hamburguesa Wave ($9,000)
+ax100.jpg          - Hamburguesa AX100 ($11,500)
+ybr.jpg            - Hamburguesa YBR ($12,000)
+tornado293.jpg     - Hamburguesa Tornado 293 ($12,500)
+fan.jpg            - Hamburguesa FAN ($14,500)
+ax115.jpg          - Hamburguesa ax115 ($18,500)
+
+📁 PROMOCIONES (carpeta: /fotos/promociones/)
+--------------------------------------------
+promo-smash.jpg    - Promo Smash ($24,000)
+promo-cripton.jpg  - Promo Cripton ($24,000)
+promo-wave.jpg     - Promo Wave ($24,000)
+
+📁 BEBIDAS (carpeta: /fotos/bebidas/)
+------------------------------------
+pepsi.jpg          - Pepsi ($2,000) ✅
+seven-up.jpg       - Seven Up ($2,000) ✅
+bebida.jpg         - Placeholder para fallback
+
+📋 INSTRUCCIONES:
+=================
+
+1. Guarda tus fotos con EXACTAMENTE estos nombres
+2. Usa formato JPG o PNG
+3. Tamaño recomendado: 400x300 píxeles (o proporcional)
+4. Las fotos se mostrarán automáticamente cuando las agregues
+5. Si no hay foto, se muestra una imagen temporal
+
+✅ EJEMPLO:
+- Tienes foto de la Smash → Guárdala como "smash.jpg" en /fotos/hamburguesas/
+- Tienes foto de Promo Cripton → Guárdala como "promo-cripton.jpg" en /fotos/promociones/
+
+❗ IMPORTANTE: 
+- Nombres en MINÚSCULAS
+- SIN espacios (usa guiones: promo-smash.jpg)
+- Extensión .jpg o .png

@@ -1,0 +1,43 @@
+🎯 INSTRUCCIONES PASO A PASO
+============================
+
+1. PREPARAR TUS FOTOS:
+   - Tamaño recomendado: 400x300 píxeles (o proporcional 4:3)
+   - Formato: JPG o PNG
+   - Buena iluminación y calidad
+
+2. RENOMBRAR LAS FOTOS:
+   📍 HAMBURGUESAS (guarda en: fotos/hamburguesas/):
+   ✅ smash.jpg
+   ✅ cripton.jpg  
+   ✅ wave.jpg
+   ✅ ax100.jpg
+   ✅ ybr.jpg
+   ✅ tornado293.jpg
+   ✅ fan.jpg
+   ✅ ax115.jpg
+
+   📍 PROMOCIONES (guarda en: fotos/promociones/):
+   ✅ promo-smash.jpg
+   ✅ promo-cripton.jpg
+   ✅ promo-wave.jpg
+
+   📍 BEBIDAS (guarda en: fotos/bebidas/):
+   ✅ bebida.jpg
+
+3. COLOCAR LAS FOTOS:
+   - Copia cada foto en su carpeta correspondiente
+   - Respeta EXACTAMENTE los nombres (todo en minúsculas)
+
+4. RESULTADO:
+   - Si la foto existe: Se muestra tu foto real
+   - Si no existe: Se muestra imagen temporal amarilla con el nombre
+
+💡 PUEDES AGREGAR LAS FOTOS DE A POCO:
+   - Agrega las que tengas listas
+   - Las que falten mostrarán imagen temporal
+   - Cuando tengas más fotos, solo cópialas con el nombre correcto
+
+🔄 ACTUALIZAR LA PÁGINA:
+   - Refresca el navegador después de agregar fotos
+   - No necesitas modificar código

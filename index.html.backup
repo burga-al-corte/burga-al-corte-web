@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burga al Corte</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍔</text></svg>">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div class="header-brand">
+      <img src="LOGO BURGA AL CORTE.jpg" alt="Logo" class="logo">
+      <h1>BURGA AL CORTE</h1>
+    </div>
+    <nav>
+      <a href="#menu">🍔 Menú</a>
+      <a href="#promos">🎯 Promos</a>
+      <a href="#bebidas">🥤 Bebidas</a>
+      <a href="#redes">📱 Contacto</a>
+    </nav>
+  </header>
+
+
+  </div>
+
+
+
+  <!-- Navegación lateral flotante -->
+  <div class="nav-lateral">
+    <!-- Botón del carrito en la navegación lateral -->
+    <button class="nav-btn-lateral carrito-btn-lateral" onclick="abrirCarrito()">
+      <div class="nav-icon">
+        <svg viewBox="0 0 576 512" fill="currentColor" width="24" height="24">
+          <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22.2 0 41.5 15.8 45.6 37.5l7.9 41.5H488c22.6 0 37.9 21.4 32.5 42.9l-96 384c-2.9 11.4-12.9 19.1-24.5 19.1H152c-11.6 0-21.6-7.7-24.5-19.1L51.5 85.5l-7.9-41.5C41.5 21.8 22.2 6 0 24zM176 512a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm256-48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0z"/>
+        </svg>
+        <div class="carrito-contador-lateral" id="carrito-contador-lateral">0</div>
+      </div>
+      <span class="nav-text">Carrito</span>
+    </button>
+    
+    <!-- Separador visual -->
+    <div class="nav-separador"></div>
+    
+    <button class="nav-btn-lateral" onclick="scrollToSection('menu')" data-section="menu">
+      <span class="nav-icon">🍔</span>
+      <span class="nav-text">Menú</span>
+    </button>
+    <button class="nav-btn-lateral" onclick="scrollToSection('promos')" data-section="promos">
+      <span class="nav-icon">🎯</span>
+      <span class="nav-text">Promos</span>
+    </button>
+    <button class="nav-btn-lateral" onclick="scrollToSection('bebidas')" data-section="bebidas">
+      <span class="nav-icon">🥤</span>
+      <span class="nav-text">Bebidas</span>
+    </button>
+    <button class="nav-btn-lateral" onclick="scrollToSection('redes')" data-section="redes">
+      <span class="nav-icon">📱</span>
+      <span class="nav-text">Contacto</span>
+    </button>
+  </div>
+
+  <!-- Panel lateral (oculto) -->
+  <div class="sidebar">
+    <nav>
+      <a href="#menu">🍔 Menú</a>
+      <a href="#promos">🎯 Promo</a>
+      <a href="#bebidas">🥤 Bebida</a>
+      <a href="#redes">📱 Contacto</a>
+    </nav>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="content-area">
+    <main>
+    <section id="menu">
+      <h2>Hamburguesas</h2>
+      <div class="hamburguesas-container">
+        <!-- Primeras 8 hamburguesas en layout especial -->
+        <div class="hamburguesas-featured" id="hamburguesas-featured">
+        </div>
+        
+        <!-- Resto de hamburguesas en grid normal -->
+        <div class="grid" id="hamburguesas-grid" style="display: none;">
+        </div>
+      </div>
+    </section>
+
+    <section id="promos">
+      <h2>Promociones</h2>
+      <div class="grid" id="promos-grid">
+      </div>
+    </section>
+
+    <section id="bebidas">
+      <h2>Bebidas</h2>
+      <div class="grid" id="bebidas-grid">
+      </div>
+    </section>
+
+    <section id="contacto">
+      <h2>📱 Contacto</h2>
+      <div class="contacto-info">
+        <div class="contacto-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <h3>Ubicación</h3>
+            <p>Santa Fe 613 y 12 de Octubre, Dique Luján</p>
+          </div>
+        </div>
+        <div class="contacto-item">
+          <i class="fab fa-whatsapp"></i>
+          <div>
+            <h3>WhatsApp</h3>
+            <p>Hacé tu pedido directamente</p>
+          </div>
+        </div>
+        <div class="contacto-item">
+          <i class="fas fa-clock"></i>
+          <div>
+            <h3>Horarios</h3>
+            <p>Consultar disponibilidad</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Selector de Bebidas para Promos -->
+    <div id="modal-bebidas-promo" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:1000; justify-content:center; align-items:center;">
+      <div style="background:white; border-radius:15px; padding:30px; max-width:500px; width:90%; max-height:80%; overflow-y:auto;">
+        <h3 style="text-align:center; margin-bottom:20px; color:#2c3e50;">🥤 Elegí tus 3 Bebidas Gratis</h3>
+        <p style="text-align:center; margin-bottom:25px; color:#666; font-size:14px;">
+          Tu promo incluye 3 bebidas. Seleccioná la cantidad de cada una:
+        </p>
+        
+        <div id="selector-bebidas-content">
+          <!-- Contenido dinámico generado por JavaScript -->
+        </div>
+        
+        <div style="display:flex; gap:10px; justify-content:space-between; margin-top:25px;">
+          <button onclick="cancelarSeleccionBebidas()" style="flex:1; padding:12px; background:#e74c3c; color:white; border:none; border-radius:8px; cursor:pointer;">
+            ❌ Cancelar
+          </button>
+          <button onclick="confirmarSeleccionBebidas()" style="flex:1; padding:12px; background:#27ae60; color:white; border:none; border-radius:8px; cursor:pointer;">
+            ✅ Confirmar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal del Carrito de Compras -->
+    <div id="modal-carrito" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:2000; justify-content:center; align-items:center;">
+      <div class="carrito-modal-content">
+        <div class="carrito-header">
+          <h2>🛒 Tu Pedido</h2>
+          <button class="btn-cerrar-carrito" onclick="cerrarCarrito()">✖️</button>
+        </div>
+        
+        <div class="carrito-body">
+          <ul id="lista-carrito"></ul>
+          <div class="carrito-total">
+            <p id="total-carrito">Total: $0</p>
+          </div>
+          
+          <div class="formulario-extra">
+            <div class="form-group">
+              <label for="pedido-nombre">Tu nombre:</label>
+              <input type="text" id="pedido-nombre" placeholder="Ej: Franco Martinez" required>
+            </div>
+
+            <div class="form-group">
+              <label for="pedido-direccion">Tu dirección:</label>
+              <input type="text" id="pedido-direccion" placeholder="Ej: Santa Fe 613 y 12 de octubre" required>
+            </div>
+            
+            <div class="metodos-pago">
+              <h3>Método de Pago:</h3>
+              <div class="opciones-pago">
+                <button type="button" class="btn-pago" id="btn-efectivo" onclick="seleccionarPago('efectivo')">
+                  💵 Efectivo
+                </button>
+                <button type="button" class="btn-pago" id="btn-mercadopago" onclick="seleccionarPago('mercadopago')">
+                  💳 MercadoPago
+                </button>
+              </div>
+              <p class="descripcion-pago" id="desc-pago"></p>
+            </div>
+          </div>
+
+          <button class="btn-pedido" onclick="realizarPedido()" id="btn-hacer-pedido" disabled>Hacer Pedido</button>
+          
+          <div id="resumen-mercadopago" style="display:none; margin-top:20px; background:#fffbe6; border:1px solid #ffe58f; border-radius:10px; padding:20px;">
+            <h3>💳 Transferencia por Mercado Pago</h3>
+            <p><b>Total a transferir:</b> <span id="mp-total" style="font-size:1.2em;color:#d48806"></span></p>
+            <p><b>Alias:</b> <span id="mp-alias"></span> <button onclick="copiarMP('alias')">Copiar</button></p>
+            <p><b>CBU:</b> <span id="mp-cbu"></span> <button onclick="copiarMP('cbu')">Copiar</button></p>
+            <p><b>Nombre destinatario:</b> <span id="mp-titular"></span> <button onclick="copiarMP('titular')">Copiar</button></p>
+            <p style="color:#ad6800">Realizá la transferencia y luego confirmá tu pedido por WhatsApp.</p>
+            <button onclick="cerrarResumenMP()" style="margin-top:10px;">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  </div>
+
+  <footer id="redes">
+    <p><i class="fas fa-map-marker-alt"></i> Santa Fe 613 y 12 de Octubre, Dique Luján</p>
+    <div class="redes">
+      <a href="https://www.instagram.com/burga_alcorte?igsh=bWFvaHhsOXN2bmcx" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://api.whatsapp.com/send?phone=1141690977" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </footer>
+
+  <script type="module">
+    // --- FUNCIONES MERCADO PAGO RESUMEN ---
+    window.mostrarResumenMercadoPago = function(total) {
+      document.getElementById('mp-total').textContent = "$" + total.toLocaleString();
+      document.getElementById('mp-alias').textContent = datosMercadoPago.alias;
+      document.getElementById('mp-cbu').textContent = datosMercadoPago.cbu;
+      document.getElementById('mp-titular').textContent = datosMercadoPago.titular;
+      document.getElementById('resumen-mercadopago').style.display = 'block';
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+    window.cerrarResumenMP = function() {
+      document.getElementById('resumen-mercadopago').style.display = 'none';
+    }
+    window.copiarMP = function(tipo) {
+      let texto = '';
+      if(tipo==='alias') {
+        texto = datosMercadoPago.alias;
+        // Abrir Mercado Pago primero para evitar bloqueos
+        window.open('https://www.mercadopago.com.ar/', '_blank');
+        navigator.clipboard.writeText(texto).then(()=>{
+          mostrarAvisoPegado('alias');
+          alert('Copiado: ' + texto);
+        });
+        return;
+      }
+      if(tipo==='cbu') {
+        texto = datosMercadoPago.cbu;
+        navigator.clipboard.writeText(texto).then(()=>{
+          mostrarAvisoPegado('cbu');
+          alert('Copiado: ' + texto);
+        });
+        return;
+      }
+      if(tipo==='titular') {
+        texto = datosMercadoPago.titular;
+        navigator.clipboard.writeText(texto).then(()=>{
+          alert('Copiado: ' + texto);
+        });
+        return;
+      }
+
+      // Función para mostrar aviso visual
+      function mostrarAvisoPegado(tipo) {
+        let mensaje = '';
+        if(tipo==='alias') mensaje = 'Alias copiado. Ahora pegalo (Ctrl+V) en Mercado Pago para transferir.';
+        if(tipo==='cbu') mensaje = 'CBU copiado. Ahora pegalo (Ctrl+V) en Mercado Pago para transferir.';
+        if(!document.getElementById('aviso-pegar')) {
+          const aviso = document.createElement('div');
+          aviso.id = 'aviso-pegar';
+          aviso.textContent = mensaje;
+          aviso.style.position = 'fixed';
+          aviso.style.bottom = '30px';
+          aviso.style.left = '50%';
+          aviso.style.transform = 'translateX(-50%)';
+          aviso.style.background = '#fffbe6';
+          aviso.style.border = '1px solid #ffe58f';
+          aviso.style.color = '#ad6800';
+          aviso.style.padding = '12px 24px';
+          aviso.style.borderRadius = '8px';
+          aviso.style.boxShadow = '0 2px 8px rgba(0,0,0,0.08)';
+          aviso.style.zIndex = '9999';
+          document.body.appendChild(aviso);
+          setTimeout(()=>{
+            aviso.remove();
+          }, 5000);
+        }
+      }
+    }
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js';
+    import { getFirestore, collection, addDoc, getDocs, setDoc, doc, runTransaction, getDoc } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js';
+
+    const firebaseConfig = {
+  apiKey: "AIzaSyCOkXZe6EEKKUR2Sua0WuViwRQtgfZn-c0",
+  authDomain: "la-burga-al-corte.firebaseapp.com",
+  databaseURL: "https://la-burga-al-corte-default-rtdb.firebaseio.com",
+  projectId: "la-burga-al-corte",
+  storageBucket: "la-burga-al-corte.firebasestorage.app",
+  messagingSenderId: "297665758581",
+  appId: "1:297665758581:web:f5db4ba8cbe590df503f3c",
+  measurementId: "G-S06FL6RRLG"
+    };
+
+    let db = null;
+    let firebaseInicializado = false;
+    
+    // Inicialización de Firebase BAJO DEMANDA
+    async function inicializarFirebase() {
+      if (firebaseInicializado) return; // Evitar múltiples inicializaciones
+      
+      try {
+        console.log("🔄 Conectando a Firebase bajo demanda...");
+        const app = initializeApp(firebaseConfig);
+        db = getFirestore(app);
+        window.db = db; // Exponer también en scope global
+        firebaseInicializado = true;
+        console.log("✅ Firebase conectado correctamente");
+        
+        // Inicializar sistema de IDs únicos si es necesario
+        await inicializarSistemaIds();
+        
+        // NO cargar productos automáticamente - solo cuando se necesiten
+        console.log("🎯 Firebase listo para usar bajo demanda");
+        
+        return true;
+      } catch (error) {
+        console.log("❌ Error conectando Firebase:", error);
+        firebaseInicializado = false;
+        return false;
+      }
+    }
+    
+    // Exponer función para uso bajo demanda
+    window.inicializarFirebase = inicializarFirebase;
+    window.db = null; // Exponer db para verificaciones
+    
+    // NO ejecutar inicialización automáticamente - solo bajo demanda
+    
+    // Función para inicializar el sistema de IDs únicos
+    async function inicializarSistemaIds() {
+      if (!db) return;
+      
+      try {
+        const contadorRef = doc(db, 'sistema', 'contador_pedidos');
+        const contadorDoc = await getDoc(contadorRef);
+        
+        if (!contadorDoc.exists()) {
+          console.log('🔧 Inicializando contador de pedidos...');
+          await setDoc(contadorRef, { 
+            ultimo_id: 0,
+            creado: new Date(),
+            descripcion: 'Contador global de IDs de pedidos para sincronización web-escritorio'
+          });
+          console.log('✅ Contador inicializado correctamente');
+        } else {
+          console.log('✅ Sistema de IDs ya inicializado');
+        }
+      } catch (error) {
+        console.log('⚠️ Error inicializando sistema de IDs:', error);
+      }
+    }
+
+    // Función para obtener IDs únicos globales con transacciones
+    window.getNextPedidoId = async function() {
+      if (!db) {
+        console.error('❌ Firebase no está disponible');
+        throw new Error('Firebase no disponible');
+      }
+      
+      try {
+        console.log('🔄 Obteniendo próximo ID único con transacción...');
+        
+        const contadorRef = doc(db, 'sistema', 'contador_pedidos');
+        
+        const nuevoId = await runTransaction(db, async (transaction) => {
+          const contadorDoc = await transaction.get(contadorRef);
+          
+          if (!contadorDoc.exists()) {
+            // Si no existe el documento, lo creamos con ID inicial
+            console.log('📝 Creando contador inicial...');
+            transaction.set(contadorRef, { ultimo_id: 1 });
+            return 1;
+          }
+          
+          const datosActuales = contadorDoc.data();
+          const siguienteId = (datosActuales.ultimo_id || 0) + 1;
+          
+          // Incrementar el contador de forma atómica
+          transaction.update(contadorRef, { ultimo_id: siguienteId });
+          
+          console.log(`🔢 ID único generado: ${siguienteId}`);
+          return siguienteId;
+        });
+        
+        return nuevoId;
+      } catch (error) {
+        console.error('❌ Error obteniendo ID único:', error);
+        // Fallback: intentar con el método anterior como respaldo
+        try {
+          console.log('⚠️ Usando método de respaldo...');
+          const snapshot = await getDocs(collection(db, 'pedidos'));
+          let maxId = 0;
+          
+          snapshot.forEach(docSnap => {
+            const docId = parseInt(docSnap.id);
+            if (!isNaN(docId) && docId > maxId) {
+              maxId = docId;
+            }
+          });
+          
+          return maxId + 1;
+        } catch (fallbackError) {
+          console.error('❌ Error en método de respaldo:', fallbackError);
+          throw new Error('No se pudo obtener ID único');
+        }
+      }
+    };
+
+    window.guardarEnFirebase = async function(pedidoData) {
+      console.log('🔥 Función guardarEnFirebase llamada');
+      console.log('📊 Datos recibidos:', pedidoData);
+      console.log('🔗 Base de datos disponible:', !!db);
+      
+      if (!db) {
+        console.log('❌ No hay conexión a Firebase');
+        return null;
+      }
+      
+      try {
+        console.log('📝 Obteniendo ID único global...');
+        const proximoId = await window.getNextPedidoId();
+        console.log('🔢 ID único asignado:', proximoId);
+        
+        // Obtener fecha y hora EXACTA del momento del pedido
+        const ahoraExacto = new Date();
+        
+        // Estructura exacta del programa de escritorio
+        const docData = {
+          direccion: pedidoData.direccion,
+          estado: "pendiente",
+          fecha: ahoraExacto,
+          fecha_pedido: ahoraExacto,
+          id_pedido: proximoId.toString(),
+          items: pedidoData.productos.map((item, index) => ({
+            cantidad: item.cantidad.toString(),
+            nombre: item.nombre,
+            precio: item.precio,
+            producto_id: (index + 1).toString()
+          })),
+          metodo_pago: pedidoData.metodoPago,
+          nombre_cliente: pedidoData.nombre,
+          origen: "web",
+          telefono: "",
+          total: pedidoData.total
+        };
+        
+        console.log('💾 Guardando documento:', docData);
+        await setDoc(doc(db, 'pedidos', proximoId.toString()), docData);
+        console.log('✅ Documento guardado exitosamente');
+        
+        return proximoId.toString();
+      } catch (error) {
+        console.error('❌ Error detallado guardando pedido:', error);
+        throw error;
+      }
+    };
+
+    // Función para cargar productos desde Firebase
+    window.cargarProductosDesdeFirebase = async function() {
+      if (!db) {
+        console.log('⚠️ Firebase no disponible, usando productos de respaldo');
+        window.mostrarProductosRespaldo();
+        return;
+      }
+      
+      try {
+        console.log('📦 Cargando productos desde Firebase...');
+        const productosSnapshot = await getDocs(collection(db, 'productos'));
+        const productos = [];
+        
+        productosSnapshot.forEach(doc => {
+          const data = doc.data();
+          productos.push({
+            id: doc.id,
+            nombre: data.nombre,
+            precio: data.precio,
+            categoria: data.categoria || 'hamburguesa',
+            descripcion: data.descripcion || 'Deliciosa opción de nuestra carta',
+            imagen: data.imagen || `./fotos/${data.categoria || 'hamburguesas'}/${data.nombre.toLowerCase()}.jpg`,
+            disponible: data.disponible !== false
+                { nombre: 'Seven Up', imagen: './fotos/bebidas/seven-up.jpg' }
+              ];
+            
+              let html = '';
+            
+              bebidasDisponibles.forEach(bebida => {
+                html += `
+                  <div class="bebida-selector">
+                    <div class="bebida-info">
+                      <img src="${bebida.imagen}" alt="${bebida.nombre}" class="bebida-img" onerror="this.src='./fotos/bebidas/bebida.jpg'">
+                      <div class="bebida-nombre">${bebida.nombre}</div>
+                    </div>
+                    <div class="cantidad-selector">
+                      <button class="btn-cantidad" onclick="cambiarCantidadBebida('${bebida.nombre}', -1)">−</button>
+                      <span class="cantidad-display" id="cantidad-${bebida.nombre.replace(' ', '-')}">${bebidasSeleccionadas[bebida.nombre]}</span>
+                      <button class="btn-cantidad" onclick="cambiarCantidadBebida('${bebida.nombre}', 1)">+</button>
+                    </div>
+                  </div>
+                `;
+              });
+            
+              // Agregar contador total
+              const totalBebidas = window._totalBebidasPromo || 3;
+              html += `<div id="contador-bebidas" class="contador-total">Seleccionadas: <span id="total-seleccionadas">0</span> / ${totalBebidas} bebidas</div>`;
+            
+              container.innerHTML = html;
+              actualizarContadorBebidas();
+            }            function crearContenidoSelectorBebidas() {
+              const container = safeGetElement('selector-bebidas-content');
+              if (!container) return;
+            
+              const bebidasDisponibles = [
+                { nombre: 'Pepsi', imagen: './fotos/bebidas/pepsi.jpg' },
+                { nombre: 'Seven Up', imagen: './fotos/bebidas/seven-up.jpg' }
+              ];
+            
+              let html = '';
+            
+              bebidasDisponibles.forEach(bebida => {
+                html += `
+                  <div class="bebida-selector">
+                    <div class="bebida-info">
+                      <img src="${bebida.imagen}" alt="${bebida.nombre}" class="bebida-img" onerror="this.src='./fotos/bebidas/bebida.jpg'">
+                      <div class="bebida-nombre">${bebida.nombre}</div>
+                    </div>
+                    <div class="cantidad-selector">
+                      <button class="btn-cantidad" onclick="cambiarCantidadBebida('${bebida.nombre}', -1)">−</button>
+                      <span class="cantidad-display" id="cantidad-${bebida.nombre.replace(' ', '-')}">${bebidasSeleccionadas[bebida.nombre]}</span>
+                      <button class="btn-cantidad" onclick="cambiarCantidadBebida('${bebida.nombre}', 1)">+</button>
+                    </div>
+                  </div>
+                `;
+              });
+            
+              // Agregar contador total
+              const totalBebidas = window._totalBebidasPromo || 3;
+              html += `<div id="contador-bebidas" class="contador-total">Seleccionadas: <span id="total-seleccionadas">0</span> / ${totalBebidas} bebidas</div>`;
+            
+              container.innerHTML = html;
+              actualizarContadorBebidas();
+            }            function crearContenidoSelectorBebidas() {
+              const container = safeGetElement('selector-bebidas-content');
+              if (!container) return;
+            
+              const bebidasDisponibles = [
+                { nombre: 'Pepsi', imagen: './fotos/bebidas/pepsi.jpg' },
+                { nombre: 'Seven Up', imagen: './fotos/bebidas/seven-up.jpg' }
+              ];
+            
+              let html = '';
+            
+              bebidasDisponibles.forEach(bebida => {
+                html += `
+                  <div class="bebida-selector">
+                    <div class="bebida-info">
+                      <img src="${bebida.imagen}" alt="${bebida.nombre}" class="bebida-img" onerror="this.src='./fotos/bebidas/bebida.jpg'">
+                      <div class="bebida-nombre">${bebida.nombre}</div>
+                    </div>
+                    <div class="cantidad-selector">
+                      <button class="btn-cantidad" onclick="cambiarCantidadBebida('${bebida.nombre}', -1)">−</button>
+                      <span class="cantidad-display" id="cantidad-${bebida.nombre.replace(' ', '-')}">${bebidasSeleccionadas[bebida.nombre]}</span>
+                      <button class="btn-cantidad" onclick="cambiarCantidadBebida('${bebida.nombre}', 1)">+</button>
+                    </div>
+                  </div>
+                `;
+              });
+            
+              // Agregar contador total
+              const totalBebidas = window._totalBebidasPromo || 3;
+              html += `<div id="contador-bebidas" class="contador-total">Seleccionadas: <span id="total-seleccionadas">0</span> / ${totalBebidas} bebidas</div>`;
+            
+              container.innerHTML = html;
+              actualizarContadorBebidas();
+            }            function crearContenidoSelectorBebidas() {
+              const container = safeGetElement('selector-bebidas-content');
+              if (!container) return;
+            
+              const bebidasDisponibles = [
+                { nombre: 'Pepsi', imagen: './fotos/bebidas/pepsi.jpg' },
+                { nombre: 'Seven Up', imagen: './fotos/bebidas/seven-up.jpg' }
+              ];
+            
+              let html = '';
+            
+              bebidasDisponibles.forEach(bebida => {
+                html += `
+                  <div class="bebida-selector">
+                    <div class="bebida-info">
+                      <img src="${bebida.imagen}" alt="${bebida.nombre}" class="bebida-img" onerror="this.src='./fotos/bebidas/bebida.jpg'">
+                      <div class="bebida-nombre">${bebida.nombre}</div>
+                    </div>
+                    <div class="cantidad-selector">
+                      <button class="btn-cantidad" onclick="cambiarCantidadBebida('${bebida.nombre}', -1)">−</button>
+                      <span class="cantidad-display" id="cantidad-${bebida.nombre.replace(' ', '-')}">${bebidasSeleccionadas[bebida.nombre]}</span>
+                      <button class="btn-cantidad" onclick="cambiarCantidadBebida('${bebida.nombre}', 1)">+</button>
+                    </div>
+                  </div>
+                `;
+              });
+            
+              // Agregar contador total
+              const totalBebidas = window._totalBebidasPromo || 3;
+              html += `<div id="contador-bebidas" class="contador-total">Seleccionadas: <span id="total-seleccionadas">0</span> / ${totalBebidas} bebidas</div>`;
+            
+              container.innerHTML = html;
+              actualizarContadorBebidas();
+            }            function crearContenidoSelectorBebidas() {
+              const container = safeGetElement('selector-bebidas-content');
+              if (!container) return;
+            
+              const bebidasDisponibles = [
+                { nombre: 'Pepsi', imagen: './fotos/bebidas/pepsi.jpg' },
+                { nombre: 'Seven Up', imagen: './fotos/bebidas/seven-up.jpg' }
+              ];
+            
+              let html = '';
+            
+              bebidasDisponibles.forEach(bebida => {
+                html += `
+                  <div class="bebida-selector">
+                    <div class="bebida-info">
+                      <img src="${bebida.imagen}" alt="${bebida.nombre}" class="bebida-img" onerror="this.src='./fotos/bebidas/bebida.jpg'">
+                      <div class="bebida-nombre">${bebida.nombre}</div>
+                    </div>
+                    <div class="cantidad-selector">
+                      <button class="btn-cantidad" onclick="cambiarCantidadBebida('${bebida.nombre}', -1)">−</button>
+                      <span class="cantidad-display" id="cantidad-${bebida.nombre.replace(' ', '-')}">${bebidasSeleccionadas[bebida.nombre]}</span>
+                      <button class="btn-cantidad" onclick="cambiarCantidadBebida('${bebida.nombre}', 1)">+</button>
+                    </div>
+                  </div>
+                `;
+              });
+            
+              // Agregar contador total
+              const totalBebidas = window._totalBebidasPromo || 3;
+              html += `<div id="contador-bebidas" class="contador-total">Seleccionadas: <span id="total-seleccionadas">0</span> / ${totalBebidas} bebidas</div>`;
+            
+              container.innerHTML = html;
+              actualizarContadorBebidas();
+            }            function crearContenidoSelectorBebidas() {
+              const container = safeGetElement('selector-bebidas-content');
+              if (!container) return;
+            
+              const bebidasDisponibles = [
+                { nombre: 'Pepsi', imagen: './fotos/bebidas/pepsi.jpg' },
+                { nombre: 'Seven Up', imagen: './fotos/bebidas/seven-up.jpg' }
+              ];
+            
+              let html = '';
+            
+              bebidasDisponibles.forEach(bebida => {
+                html += `
+                  <div class="bebida-selector">
+                    <div class="bebida-info">
+                      <img src="${bebida.imagen}" alt="${bebida.nombre}" class="bebida-img" onerror="this.src='./fotos/bebidas/bebida.jpg'">
+                      <div class="bebida-nombre">${bebida.nombre}</div>
+                    </div>
+                    <div class="cantidad-selector">
+                      <button class="btn-cantidad" onclick="cambiarCantidadBebida('${bebida.nombre}', -1)">−</button>
+                      <span class="cantidad-display" id="cantidad-${bebida.nombre.replace(' ', '-')}">${bebidasSeleccionadas[bebida.nombre]}</span>
+                      <button class="btn-cantidad" onclick="cambiarCantidadBebida('${bebida.nombre}', 1)">+</button>
+                    </div>
+                  </div>
+                `;
+              });
+            
+              // Agregar contador total
+              const totalBebidas = window._totalBebidasPromo || 3;
+              html += `<div id="contador-bebidas" class="contador-total">Seleccionadas: <span id="total-seleccionadas">0</span> / ${totalBebidas} bebidas</div>`;
+            
+              container.innerHTML = html;
+              actualizarContadorBebidas();
+            }            function crearContenidoSelectorBebidas() {
+              const container = safeGetElement('selector-bebidas-content');
+              if (!container) return;
+            
+              const bebidasDisponibles = [
+                { nombre: 'Pepsi', imagen: './fotos/bebidas/pepsi.jpg' },
+                { nombre: 'Seven Up', imagen: './fotos/bebidas/seven-up.jpg' }
+              ];
+            
+              let html = '';
+            
+              bebidasDisponibles.forEach(bebida => {
+                html += `
+                  <div class="bebida-selector">
+                    <div class="bebida-info">
+                      <img src="${bebida.imagen}" alt="${bebida.nombre}" class="bebida-img" onerror="this.src='./fotos/bebidas/bebida.jpg'">
+                      <div class="bebida-nombre">${bebida.nombre}</div>
+                    </div>
+                    <div class="cantidad-selector">
+                      <button class="btn-cantidad" onclick="cambiarCantidadBebida('${bebida.nombre}', -1)">−</button>
+                      <span class="cantidad-display" id="cantidad-${bebida.nombre.replace(' ', '-')}">${bebidasSeleccionadas[bebida.nombre]}</span>
+                      <button class="btn-cantidad" onclick="cambiarCantidadBebida('${bebida.nombre}', 1)">+</button>
+                    </div>
+                  </div>
+                `;
+              });
+            
+              // Agregar contador total
+              const totalBebidas = window._totalBebidasPromo || 3;
+              html += `<div id="contador-bebidas" class="contador-total">Seleccionadas: <span id="total-seleccionadas">0</span> / ${totalBebidas} bebidas</div>`;
+            
+              container.innerHTML = html;
+              actualizarContadorBebidas();
+            }            function crearContenidoSelectorBebidas() {
+              const container = safeGetElement('selector-bebidas-content');
+              if (!container) return;
+            
+              const bebidasDisponibles = [
+                { nombre: 'Pepsi', imagen: './fotos/bebidas/pepsi.jpg' },
+                { nombre: 'Seven Up', imagen: './fotos/bebidas/seven-up.jpg' }
+              ];
+            
+              let html = '';
+            
+              bebidasDisponibles.forEach(bebida => {
+                html += `
+                  <div class="bebida-selector">
+                    <div class="bebida-info">
+                      <img src="${bebida.imagen}" alt="${bebida.nombre}" class="bebida-img" onerror="this.src='./fotos/bebidas/bebida.jpg'">
+                      <div class="bebida-nombre">${bebida.nombre}</div>
+                    </div>
+                    <div class="cantidad-selector">
+                      <button class="btn-cantidad" onclick="cambiarCantidadBebida('${bebida.nombre}', -1)">−</button>
+                      <span class="cantidad-display" id="cantidad-${bebida.nombre.replace(' ', '-')}">${bebidasSeleccionadas[bebida.nombre]}</span>
+                      <button class="btn-cantidad" onclick="cambiarCantidadBebida('${bebida.nombre}', 1)">+</button>
+                    </div>
+                  </div>
+                `;
+              });
+            
+              // Agregar contador total
+              const totalBebidas = window._totalBebidasPromo || 3;
+              html += `<div id="contador-bebidas" class="contador-total">Seleccionadas: <span id="total-seleccionadas">0</span> / ${totalBebidas} bebidas</div>`;
+            
+              container.innerHTML = html;
+              actualizarContadorBebidas();
+            }            categoria: data.categoria || 'hamburguesa',
+            descripcion: data.descripcion || 'Deliciosa opción de nuestra carta',
+            imagen: data.imagen || `./fotos/${data.categoria || 'hamburguesas'}/${data.nombre.toLowerCase()}.jpg`,
+            disponible: data.disponible !== false
+          });
+        });
+        
+        if (productos.length > 0) {
+          console.log(`✅ ${productos.length} productos cargados desde Firebase`);
+          window.mostrarProductos(productos);
+        } else {
+          console.log('⚠️ No se encontraron productos en Firebase, usando respaldo');
+          window.mostrarProductosRespaldo();
+        }
+      } catch (error) {
+        console.error('❌ Error cargando productos desde Firebase:', error);
+        console.log('🔄 Usando productos de respaldo...');
+        window.mostrarProductosRespaldo();
+      }
+    };
+
+    window.mostrarProductos = function(productos) {
+      const hamburguesasGrid = document.getElementById('hamburguesas-grid');
+      const promosGrid = document.getElementById('promos-grid');
+      const bebidasGrid = document.getElementById('bebidas-grid');
+      hamburguesasGrid.innerHTML = '';
+      promosGrid.innerHTML = '';
+      bebidasGrid.innerHTML = '';
+      
+      productos.forEach(producto => {
+        const div = document.createElement('div');
+        div.className = 'product-card';
+        
+        const imagenReal = producto.imagen;
+        const placeholderUrl = './fotos/bebidas/bebida.jpg'; // Fallback local
+        
+        div.innerHTML = `
+          <div class="product-image">
+            <img src="${imagenReal}" 
+                 alt="${producto.nombre}" 
+                 onerror="this.src='${placeholderUrl}'; this.onerror=null;"
+                 style="background-color: #ffcb05; color: #000;">
+          </div>
+          <div class="product-info">
+            <h3>${producto.nombre}</h3>
+            <p class="product-description">${producto.descripcion || 'Deliciosa opción de nuestra carta'}</p>
+            <div class="product-price">$${producto.precio.toLocaleString()}</div>
+            <button class="btn-agregar" onclick="event.stopPropagation(); agregarAlCarrito('${producto.nombre}', ${producto.precio}, '${producto.categoria || ''}')">Agregar al Carrito</button>
+          </div>
+        `;
+        
+        if (producto.categoria === 'promo') {
+          promosGrid.appendChild(div);
+        } else if (producto.categoria === 'bebidas') {
+          bebidasGrid.appendChild(div);
+        } else {
+          hamburguesasGrid.appendChild(div);
+        }
+      });
+    }
+
+    window.mostrarProductosRespaldo = function() {
+      const productos = [
+        // 1-8 Hamburguesas
+        { nombre: "Smash", precio: 9000, categoria: "hamburguesa", descripcion: "Medallón simple, cheddar, nuestra salsa especial + papas fritas ", imagen: "./fotos/hamburguesas/smash.jpg" },
+        { nombre: "Crypton", precio: 9000, categoria: "hamburguesa", descripcion: "simple medallon, cebolla caramelizada y queso roquefort + papas fritas", imagen: "./fotos/hamburguesas/cripton.jpg" },
+        { nombre: "Wave", precio: 9000, categoria: "hamburguesa", descripcion: "simple medallón, queso provolone y mayocriolla + papas fritas", imagen: "./fotos/hamburguesas/wave.jpg" },
+        { nombre: "AX100", precio: 11500, categoria: "hamburguesa", descripcion: "Doble medallón, doble cheddar crujientes y doble bacon + papas fritas", imagen: "./fotos/hamburguesas/ax100.jpg" },
+        { nombre: "YBR", precio: 12000, categoria: "hamburguesa", descripcion: "doble medallón, doble cheddar crujientes, cebolla caramelizada y salsa barbacoa + papas fritas", imagen: "./fotos/hamburguesas/ybr.jpg" },
+        { nombre: "Tornado 293", precio: 12500, categoria: "hamburguesa", descripcion: "doble medallón, doble cheddar, morron asado y salsa pro tork + papas fritas", imagen: "./fotos/hamburguesas/tornado293.jpg" },
+        { nombre: "FAN", precio: 14500, categoria: "hamburguesa", descripcion: "triple medallón, triple cheddar, triple bacon crujientes y salsa butaquera + papas fritas", imagen: "./fotos/hamburguesas/fan.jpg" },
+        { nombre: "ax115", precio: 18500, categoria: "hamburguesa", descripcion: "5 medallón, 5 cheddar, 5 bacon crujientes y salsa butaquera + papas fritas", imagen: "./fotos/hamburguesas/ax115.jpg" },
+        // 9-15 Promos (con bebida de elección)
+        { nombre: "Promo Smash", precio: 24000, categoria: "promo", descripcion: "Smash x3 + 3 papas fritas + 3 bebida. ¡El combo perfecto para compartir!", imagen: "./fotos/promociones/promo-smash.jpg" },
+        { nombre: "Promo Cripton", precio: 24000, categoria: "promo", descripcion: "crypton x3 + 3 papas fritas + 3 bebida. ¡Sabor y cantidad en una sola promo!", imagen: "./fotos/promociones/promo-crypton.jpg" },
+        { nombre: "Promo Wave", precio: 24000, categoria: "promo", descripcion: "Wave x3 + 3 papas fritas + 3 bebida. ¡Un combo de puro sabor!", imagen: "./fotos/promociones/promo-wave.jpg" },
+        { nombre: "Promo AX100", precio: 26000, categoria: "promo", descripcion: "AX100 x3 + 3 papas fritas + 3 bebida de elección. ¡Doble medallón, doble placer!", imagen: "./fotos/promociones/promo-ax100.jpg" },
+        { nombre: "Promo Variant", precio: 28000, categoria: "promo", descripcion: "Variant x3 + 3 papas fritas + 3 bebida de elección. ¡Sabor único e irresistible!", imagen: "./fotos/promociones/promo-variant.jpg" },
+        { nombre: "Promo Vento", precio: 28000, categoria: "promo", descripcion: "Vento x3 + 3 papas fritas + 3 bebida de elección. ¡Frescura y sabor en cada bocado!", imagen: "./fotos/promociones/promo-vento.jpg" },
+        // 12-13 Bebidas (actualizadas - solo las que se venden realmente)
+        { nombre: "Pepsi", precio: 2000, categoria: "bebidas", descripcion: "Gaseosa fría de 500ml. Pepsi", imagen: "./fotos/bebidas/pepsi.jpg" },
+        { nombre: "Seven Up", precio: 2000, categoria: "bebidas", descripcion: "Gaseosa fría de 500ml. Seven Up", imagen: "./fotos/bebidas/seven-up.jpg" }
+      ];
+      window.mostrarProductos(productos);
+    }
+  </script>
+  
+  <script src="script.js"></script>
+  
+  <script>
+    // Ejecutar inmediatamente después de cargar todo
+    if (window.mostrarProductosRespaldo) {
+      window.mostrarProductosRespaldo();
+    } else {
+      setTimeout(() => {
+        if (window.mostrarProductosRespaldo) {
+          window.mostrarProductosRespaldo();
+        }
+      }, 100);
+    }
+  </script>
+</body>
+</html>

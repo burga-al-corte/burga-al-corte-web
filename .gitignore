@@ -1,0 +1,10 @@
+# Archivos de credenciales de Firebase
+serviceAccountKey.json
+serviceAccountKey2.json
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Node modules si se usan
+node_modules/
