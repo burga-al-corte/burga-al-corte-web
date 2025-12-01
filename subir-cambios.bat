@@ -18,8 +18,7 @@ git push origin main
 echo.
 echo ========================================
 echo   CAMBIOS SUBIDOS EXITOSAMENTE!
-echo   Espera 1-2 minutos para ver los cambios en:
-echo   https://braian26valdez.github.io/burga-al-corte-web/
+echo   Repositorio: https://github.com/burga-al-corte/burga-al-corte-web
 echo ========================================
 echo.
 pause
