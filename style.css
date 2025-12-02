@@ -1077,14 +1077,95 @@ h1 {
 @media (max-width: 480px) {
   .product-card {
     margin: 0.25rem;
-    width: calc(50% - 0.5rem); /* Ajustar el ancho para dos columnas */
   }
   /* Featured hamburguesas en móviles pequeños - mantener 2 columnas */
   .hamburguesas-featured {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: auto;
     min-height: 0;
-    gap: 0.5rem; /* Espaciado entre tarjetas */
+    gap: 0.4rem;
+  }
+  .hamburguesas-featured .product-card:nth-child(1),
+  .hamburguesas-featured .product-card:nth-child(2),
+  .hamburguesas-featured .product-card:nth-child(3),
+  .hamburguesas-featured .product-card:nth-child(4),
+  .hamburguesas-featured .product-card:nth-child(5),
+  .hamburguesas-featured .product-card:nth-child(6),
+  .hamburguesas-featured .product-card:nth-child(7),
+  .hamburguesas-featured .product-card:nth-child(8) {
+    grid-row: span 1 / span 1;
+    grid-row-start: auto;
+  }
+    .product-image {
+      height: 120px;
+    }
+    .product-info {
+      padding: 0.35rem 0.5rem;
+    }
+    .product-info h3 {
+      font-size: 0.7rem;
+      margin: 0 0 0.08rem 0;
+    }
+    .product-description {
+      font-size: 0.55rem;
+      line-height: 1.1;
+      margin: 0 0 0.12rem 0;
+    }
+    .product-price {
+      font-size: 0.7rem;
+      margin: 0 0 0.18rem 0;
+    }
+    .btn-agregar {
+      padding: 0.32rem 0.5rem;
+      font-size: 0.55rem;
+      border-radius: 8px;
+    }
+  .btn-pedido {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+  }
+  /* Carrito más compacto en móviles pequeños */
+  #carrito {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  #carrito h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  .formulario-extra {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  .formulario-extra input {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+  .metodos-pago {
+    padding: 0.8rem;
+  }
+  .opciones-pago {
+    gap: 0.6rem;
+  }
+  .btn-pago {
+    padding: 0.7rem;
+    font-size: 0.8rem;
+  }
+  .carrito-item {
+    padding: 0.6rem 0;
+    font-size: 0.9rem;
+  }
+  #total-carrito {
+    font-size: 1.3rem;
+    margin: 1rem 0;
+  }
+  #comentarios textarea {
+    min-height: 100px;
+  }
+  .notificacion {
+    width: 90%;
+    padding: 15px 20px;
+    font-size: 1rem;
   }
 }
 /* Mejoras para scroll suave */
@@ -1890,16 +1971,33 @@ html {
   }
 }
 @media (max-width: 480px) {
-  .product-card {
-    margin: 0.25rem;
-    width: calc(50% - 0.5rem); /* Ajustar el ancho para dos columnas */
+  .carrito-flotante {
+    bottom: 15px;
+    right: 15px;
+    padding: 10px;
+    min-width: 90px;
   }
-  /* Featured hamburguesas en móviles pequeños - mantener 2 columnas */
-  .hamburguesas-featured {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: auto;
-    min-height: 0;
-    gap: 0.5rem; /* Espaciado entre tarjetas */
+  .carrito-icono svg {
+    width: 28px;
+    height: 28px;
+  }
+  .carrito-texto {
+    font-size: 0.7rem;
+  }
+  .nav-lateral {
+    left: 15px;
+    gap: 10px;
+  }
+  .nav-btn-lateral {
+    padding: 8px 6px;
+    min-width: 50px;
+  }
+  .nav-btn-lateral .nav-icon {
+    font-size: 1.2rem;
+    margin-bottom: 2px;
+  }
+  .nav-btn-lateral .nav-text {
+    font-size: 0.55rem;
   }
 }
 .contacto-item {
