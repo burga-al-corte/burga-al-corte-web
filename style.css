@@ -1040,19 +1040,27 @@ h1 {
     margin: 0.5rem;
   }
   .product-image {
-    height: 400px;
+    height: 200px;
   }
   .product-info {
-    padding: 1rem;
+    padding: 0.6rem 0.8rem;
   }
   .product-info h3 {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
+    margin: 0 0 0.15rem 0;
   }
   .product-description {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
+    line-height: 1.2;
+    margin: 0 0 0.2rem 0;
   }
   .product-price {
-    font-size: 1.4rem;
+    font-size: 1rem;
+    margin: 0 0 0.3rem 0;
+  }
+  .btn-agregar {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.75rem;
   }
   #comentarios {
     padding: 2rem;
@@ -1089,20 +1097,20 @@ h1 {
     grid-row-start: auto;
   }
   .product-image {
-    height: 340px;
+    height: 180px;
   }
   .product-info h3 {
-    font-size: 1.35rem;
+    font-size: 0.85rem;
   }
   .product-description {
-    font-size: 1.15rem;
+    font-size: 0.65rem;
   }
   .product-price {
-    font-size: 1.5rem;
+    font-size: 0.95rem;
   }
   .btn-agregar {
-    padding: 0.7rem 1.2rem;
-    font-size: 0.9rem;
+    padding: 0.45rem 0.7rem;
+    font-size: 0.7rem;
   }
   .btn-pedido {
     padding: 1rem 2rem;
