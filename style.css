@@ -987,9 +987,9 @@ h1 {
 }
 @media (max-width: 768px) {
   .grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 0 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    padding: 0 0.5rem;
     max-width: 100%;
   }
   /* Featured hamburguesas responsive */
@@ -1070,9 +1070,9 @@ h1 {
   .product-card {
     margin: 0.25rem;
   }
-  /* Featured hamburguesas en móviles pequeños */
+  /* Featured hamburguesas en móviles pequeños - mantener 2 columnas */
   .hamburguesas-featured {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: auto;
     min-height: 0;
     gap: 0.4rem;
