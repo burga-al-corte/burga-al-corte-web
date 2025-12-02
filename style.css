@@ -1096,22 +1096,30 @@ h1 {
     grid-row: span 1 / span 1;
     grid-row-start: auto;
   }
-  .product-image {
-    height: 180px;
-  }
-  .product-info h3 {
-    font-size: 0.85rem;
-  }
-  .product-description {
-    font-size: 0.65rem;
-  }
-  .product-price {
-    font-size: 0.95rem;
-  }
-  .btn-agregar {
-    padding: 0.45rem 0.7rem;
-    font-size: 0.7rem;
-  }
+    .product-image {
+      height: 120px;
+    }
+    .product-info {
+      padding: 0.35rem 0.5rem;
+    }
+    .product-info h3 {
+      font-size: 0.7rem;
+      margin: 0 0 0.08rem 0;
+    }
+    .product-description {
+      font-size: 0.55rem;
+      line-height: 1.1;
+      margin: 0 0 0.12rem 0;
+    }
+    .product-price {
+      font-size: 0.7rem;
+      margin: 0 0 0.18rem 0;
+    }
+    .btn-agregar {
+      padding: 0.32rem 0.5rem;
+      font-size: 0.55rem;
+      border-radius: 8px;
+    }
   .btn-pedido {
     padding: 1rem 2rem;
     font-size: 1.2rem;
