@@ -988,16 +988,17 @@ h1 {
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
-    padding: 0 0.4rem;
+    gap: 0.8rem;
+    padding: 0 0.5rem;
     max-width: 100%;
   }
   /* Featured hamburguesas responsive */
   .hamburguesas-featured {
     grid-template-columns: repeat(2, 1fr);
+    /* evitar filas fijas en responsive para que no cree grandes alturas */
     grid-auto-rows: auto;
     min-height: 0;
-    gap: 0.5rem;
+    gap: 0.6rem;
   }
   .hamburguesas-featured .product-card:nth-child(1),
   .hamburguesas-featured .product-card:nth-child(2) {
@@ -1036,35 +1037,30 @@ h1 {
     margin: 0;
   }
   .product-card {
-    margin: 0.2rem;
-    border-radius: 15px;
+    margin: 0.5rem;
   }
   .product-image {
-    height: 140px;
-    border-radius: 15px 15px 0 0;
+    height: 200px;
   }
   .product-info {
-    padding: 0.5rem 0.6rem;
-    gap: 0.3rem;
+    padding: 0.6rem 0.8rem;
   }
   .product-info h3 {
-    font-size: 0.75rem;
-    margin: 0 0 0.1rem 0;
-    line-height: 1.1;
-  }
-  .product-description {
-    font-size: 0.6rem;
-    line-height: 1.15;
+    font-size: 0.9rem;
     margin: 0 0 0.15rem 0;
   }
+  .product-description {
+    font-size: 0.7rem;
+    line-height: 1.2;
+    margin: 0 0 0.2rem 0;
+  }
   .product-price {
-    font-size: 0.85rem;
-    margin: 0 0 0.25rem 0;
+    font-size: 1rem;
+    margin: 0 0 0.3rem 0;
   }
   .btn-agregar {
-    padding: 0.4rem 0.6rem;
-    font-size: 0.65rem;
-    border-radius: 8px;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.75rem;
   }
   #comentarios {
     padding: 2rem;
@@ -1080,8 +1076,7 @@ h1 {
 }
 @media (max-width: 480px) {
   .product-card {
-    margin: 0.15rem;
-    border-radius: 12px;
+    margin: 0.25rem;
   }
   /* Featured hamburguesas en móviles pequeños - mantener 2 columnas */
   .hamburguesas-featured {
@@ -1102,29 +1097,20 @@ h1 {
     grid-row-start: auto;
   }
   .product-image {
-    height: 120px;
-    border-radius: 12px 12px 0 0;
-  }
-  .product-info {
-    padding: 0.4rem 0.5rem;
+    height: 180px;
   }
   .product-info h3 {
-    font-size: 0.7rem;
-    margin: 0 0 0.1rem 0;
+    font-size: 0.85rem;
   }
   .product-description {
-    font-size: 0.55rem;
-    line-height: 1.1;
-    margin: 0 0 0.15rem 0;
+    font-size: 0.65rem;
   }
   .product-price {
-    font-size: 0.8rem;
-    margin: 0 0 0.2rem 0;
+    font-size: 0.95rem;
   }
   .btn-agregar {
-    padding: 0.35rem 0.5rem;
-    font-size: 0.6rem;
-    border-radius: 6px;
+    padding: 0.45rem 0.7rem;
+    font-size: 0.7rem;
   }
   .btn-pedido {
     padding: 1rem 2rem;
