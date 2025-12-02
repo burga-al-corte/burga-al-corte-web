@@ -279,7 +279,7 @@ body {
     font-size: 0.75rem;
   }
   main {
-    padding: 2rem 0.3rem 3rem 140px;
+    padding: 2rem 1rem 3rem 140px;
   }
 }
 .sidebar {
@@ -490,14 +490,14 @@ h2::after {
 .hamburguesas-container {
   max-width: 2000px;
   margin: 0 auto;
-  padding: 0 0.1rem; /* menos padding lateral para compactar */
+  padding: 0 0.5rem; /* menos padding lateral para compactar */
 }
 .hamburguesas-featured {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   /* evitar filas fijas que generan espacios en blanco grandes */
   grid-auto-rows: auto;
-  gap: 0.25rem; /* reducir ligeramente el espacio entre tarjetas */
+  gap: 0.45rem; /* reducir ligeramente el espacio entre tarjetas */
   margin-bottom: 0; /* compacto con el siguiente bloque */
   min-height: 0; /* dejar que el contenido defina la altura */
 }
@@ -988,8 +988,8 @@ h1 {
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
-    padding: 0 0.3rem;
+    gap: 0.8rem;
+    padding: 0 0.5rem;
     max-width: 100%;
   }
   /* Featured hamburguesas responsive */
@@ -998,7 +998,7 @@ h1 {
     /* evitar filas fijas en responsive para que no cree grandes alturas */
     grid-auto-rows: auto;
     min-height: 0;
-    gap: 0.35rem;
+    gap: 0.6rem;
   }
   .hamburguesas-featured .product-card:nth-child(1),
   .hamburguesas-featured .product-card:nth-child(2) {
@@ -1076,14 +1076,14 @@ h1 {
 }
 @media (max-width: 480px) {
   .product-card {
-    margin: 0;
+    margin: 0.25rem;
   }
   /* Featured hamburguesas en móviles pequeños - mantener 2 columnas */
   .hamburguesas-featured {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: auto;
     min-height: 0;
-    gap: 0.25rem;
+    gap: 0.4rem;
   }
   .hamburguesas-featured .product-card:nth-child(1),
   .hamburguesas-featured .product-card:nth-child(2),
@@ -1977,22 +1977,19 @@ html {
     font-size: 0.7rem;
   }
   .nav-lateral {
-    left: 5px;
-    gap: 8px;
+    left: 15px;
+    gap: 10px;
   }
   .nav-btn-lateral {
-    padding: 6px 4px;
-    min-width: 45px;
+    padding: 8px 6px;
+    min-width: 50px;
   }
   .nav-btn-lateral .nav-icon {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin-bottom: 2px;
   }
   .nav-btn-lateral .nav-text {
-    font-size: 0.5rem;
-  }
-  main {
-    padding: 1.5rem 0.3rem 2rem 55px;
+    font-size: 0.55rem;
   }
 }
 .contacto-item {
