@@ -490,14 +490,14 @@ h2::after {
 .hamburguesas-container {
   max-width: 2000px;
   margin: 0 auto;
-  padding: 0 0.5rem; /* menos padding lateral para compactar */
+  padding: 0 0.1rem; /* menos padding lateral para compactar */
 }
 .hamburguesas-featured {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   /* evitar filas fijas que generan espacios en blanco grandes */
   grid-auto-rows: auto;
-  gap: 0.45rem; /* reducir ligeramente el espacio entre tarjetas */
+  gap: 0.25rem; /* reducir ligeramente el espacio entre tarjetas */
   margin-bottom: 0; /* compacto con el siguiente bloque */
   min-height: 0; /* dejar que el contenido defina la altura */
 }
@@ -988,8 +988,8 @@ h1 {
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.4rem;
-    padding: 0 0.2rem;
+    gap: 0.3rem;
+    padding: 0 0.1rem;
     max-width: 100%;
   }
   /* Featured hamburguesas responsive */
@@ -998,7 +998,7 @@ h1 {
     /* evitar filas fijas en responsive para que no cree grandes alturas */
     grid-auto-rows: auto;
     min-height: 0;
-    gap: 0.3rem;
+    gap: 0.2rem;
   }
   .hamburguesas-featured .product-card:nth-child(1),
   .hamburguesas-featured .product-card:nth-child(2) {
@@ -1083,7 +1083,7 @@ h1 {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: auto;
     min-height: 0;
-    gap: 0.25rem;
+    gap: 0.15rem;
   }
   .hamburguesas-featured .product-card:nth-child(1),
   .hamburguesas-featured .product-card:nth-child(2),
@@ -1992,7 +1992,7 @@ html {
     font-size: 0.5rem;
   }
   main {
-    padding: 1.5rem 0.2rem 2rem 55px;
+    padding: 1.5rem 0.1rem 2rem 55px;
   }
 }
 .contacto-item {
